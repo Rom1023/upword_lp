@@ -47,13 +47,13 @@ class Form extends Component {
   render () {
     return (
       <div className="container">
-        <div className="left-scene col-sm-6 col-md-4">
+        <div className="left-scene col-sm-6">
           <img src="../../assets/photos/upword-logo.svg" alt="" />
           <h1>Get More From Your <span>Content</span>.</h1>
           <p>UpWord helps you optimize your brand's publications to reach a larger audience, integrating social content with your website.</p>
         </div>
 
-        <div className="col-sm-6 col-md-4">
+        <div className="col-sm-6">
           <form className="form">
           <p className="form-limited-offer">Limited offer</p>
             <h2>Sign up to get your free trial today!</h2>
