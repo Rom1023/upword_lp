@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap');
+
 body {
   font-family: Helvetica;
 }
@@ -9,8 +11,47 @@ body {
   justify-content: center;
 }
 
+
+
 .form{
   border-radius: 10px;
   border: solid 2px #ECEDF2;
   padding: 20px;
+  position: relative;
 }
+
+.form-limited-offer{
+  background-color: #FFDD4E;
+  padding: 10px;
+  width: 40%;
+  position: absolute;
+  left: -15px;
+  top: -20px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-check{
+  p{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+  }
+}
+
+.left-scene{
+  h1{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+      span{
+        color: #436CF2;
+      }
+  }
+  p{
+    color: #828691;
+    text-align: left;
+  }
+}
+
