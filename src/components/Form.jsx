@@ -6,7 +6,8 @@ class Form extends Component {
     super(props);
     this.state = {
       name: 'Enter your name',
-      email: 'Enter your email'
+      email: 'Enter your email',
+      checked: false
     };
   }
 
@@ -18,9 +19,12 @@ class Form extends Component {
 
 
   handleChange = (event) => {
-    // this.event.preventDefault();
     this.setState({ name: event.target.value });
     this.setState({ email: event.target.value });
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
   }
 
   render () {
@@ -32,12 +36,12 @@ class Form extends Component {
             <input type="email" className="form-control" value={this.state.name} onChange={this.handleChange} />
           </div>
           <div className="form-group">
-            <input type="email" className="form-control" value={this.state.email} onChange={this.handleChange} onBlur={this.isEmailValid(this.state.email)} />
+            <input type="email" className="form-control" value={this.state.email} onChange={this.handleChange} onBlur={() => this.isEmailValid(this.state.email)} />
           </div>
           <div className="form-check">
             <input type="checkbox" className="form-check-input" />
           </div>
-          <button type="submit" className="btn btn-primary">Start my free trial</button>
+          <button type="submit" className="btn btn-primary" onSubmit={this.handleSubmit}>Start my free trial</button>
         </form>
       </div>
     );
