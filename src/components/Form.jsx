@@ -51,7 +51,7 @@ class Form extends Component {
       <div className="container">
         <div className="row">
           <div className="left-scene col-xs-10 col-sm-8 col-md-5">
-            <img src="../../assets/photos/upword-logo.svg" alt="" />
+            <img src="../../assets/photos/upword-logo.svg" alt="upword-logo" />
             <h1>Get More From Your <span>Content</span>.</h1>
             <p>UpWord helps you optimize your brand's publications to reach a larger audience, integrating social content with your website.</p>
           </div>
