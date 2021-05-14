@@ -19,6 +19,7 @@ const email = (value) => {
   return value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ? 'Invalid email address' : undefined;
 };
 
+
 class Form extends Component {
   constructor(props) {
     super(props);
@@ -40,7 +41,6 @@ class Form extends Component {
 
   onSubmit = (values) => {
     this.setState({ infos: values });
-    console.log(this.state.infos);
     if (this.state.checked) {
       this.setState({ showModal: true });
     }
@@ -51,6 +51,19 @@ class Form extends Component {
       <div>
         <label htmlFor={label}>{label}</label>
         <input {...input} placeholder={placeholder} type={type} className={className} />
+        {touched && ((error && <span className="text-danger">{error}</span>) || (warning && <span className="text-warning">{warning}</span>))}
+      </div>
+    );
+  };
+
+  renderFieldCheckbox = ({ input, type, className, meta: { touched, error, warning } }) => {
+    return (
+      <div>
+        <input {...input} type={type} className={className} />
+        <small>
+          I agree to the <u>terms and conditions</u>
+        </small>
+        <br />
         {touched && ((error && <span className="text-danger">{error}</span>) || (warning && <span className="text-warning">{warning}</span>))}
       </div>
     );
@@ -91,13 +104,20 @@ class Form extends Component {
             />
           </div>
           <div className="form-check">
-            <input type="checkbox" onClick={this.handleClick} className="form-check-input" />
-            <small>
-              I agree to the <u>terms and conditions</u>
-            </small>
+            <Field
+              name="terms"
+              className="form-check-input"
+              id="terms"
+              component={this.renderFieldCheckbox}
+              type="checkbox"
+              validate={required}
+              onChange={this.handleClick}
+            />
           </div>
+
           <button type="submit" className="btn-submit">Start my free trial</button>
         </form>
+
         <Modal infos={this.state.infos} handleClose={this.hideModal} show={this.state.showModal} />
       </div>
     );
