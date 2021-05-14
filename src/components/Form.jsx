@@ -49,14 +49,13 @@ class Form extends Component {
   render () {
     return (
       <div className="container">
-        <div className="row">
-          <div className="left-scene col-xs-10 col-sm-8 col-md-5">
+          <div className="left-scene">
             <img src="../../assets/photos/upword-logo.svg" alt="upword-logo" />
             <h1>Get More From Your <span>Content</span>.</h1>
             <p>UpWord helps you optimize your brand's publications to reach a larger audience, integrating social content with your website.</p>
           </div>
 
-          <form className="form col-xs-10 col-sm-8 col-md-4">
+          <form className="form">
             <p className="form-limited-offer">Limited offer</p>
             <h2>Sign up to get your free trial today!</h2>
             <div className="form-group">
@@ -75,7 +74,6 @@ class Form extends Component {
             </div>
             <button type="submit" className="btn-submit" onClick={this.handleSubmit}>Start my free trial</button>
           </form>
-        </div>
 
         <Modal show={this.state.showModal} handleClose={this.hideModal} name={this.state.name} email={this.state.email} />
       </div>

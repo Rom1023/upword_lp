@@ -6,7 +6,7 @@ const Modal = ({ handleClose, show, name, email }) => {
 
   return (
     <div className={showHideClassName}>
-      <section className="modal-main col-xs-8 col-sm-4">
+      <section className="modal-main col-xs-8 col-sm-3">
         <div>
           <img src="../../assets/photos/upword-illustration.png" alt="Welcome photo" />
         </div>
